@@ -1,0 +1,106 @@
+[0m01:14:14.596854 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1d3e9c38c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1d403747d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1d3e12bc50>]}
+
+
+============================== 01:14:14.604906 | 1b9215e9-4496-481a-b0b5-4c427fe8c047 ==============================
+[0m01:14:14.604906 [info ] [MainThread]: Running with dbt=1.11.7
+[0m01:14:14.605649 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'profiles_dir': '/home/renantorres/.dbt', 'log_path': 'logs', 'version_check': 'True', 'printer_width': '80', 'use_colors': 'True', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt init dbt_project', 'use_experimental_parser': 'False', 'empty': 'None', 'debug': 'False', 'cache_selected_only': 'False', 'static_parser': 'True', 'indirect_selection': 'eager', 'warn_error': 'None', 'introspect': 'True', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'write_json': 'True', 'log_cache_events': 'False', 'log_format': 'default', 'fail_fast': 'False'}
+[0m01:14:14.638684 [info ] [MainThread]: Creating dbt configuration folder at /home/renantorres/.dbt
+[0m01:14:14.643075 [debug] [MainThread]: Starter project path: /home/renantorres/projetos/pipeline_sentinel/venv/lib/python3.13/site-packages/dbt/include/starter_project
+[0m01:14:14.663255 [info ] [MainThread]: 
+Your new dbt project "dbt_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m01:14:14.664106 [info ] [MainThread]: Setting up your profile.
+[0m01:15:04.771898 [error] [MainThread]: Encountered an error:
+
+[0m01:15:04.778279 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/renantorres/projetos/pipeline_sentinel/venv/lib/python3.13/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "/home/renantorres/projetos/pipeline_sentinel/venv/lib/python3.13/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "/home/renantorres/projetos/pipeline_sentinel/venv/lib/python3.13/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+  File "/home/renantorres/projetos/pipeline_sentinel/venv/lib/python3.13/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/renantorres/projetos/pipeline_sentinel/venv/lib/python3.13/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/renantorres/projetos/pipeline_sentinel/venv/lib/python3.13/site-packages/dbt/task/init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/renantorres/projetos/pipeline_sentinel/venv/lib/python3.13/site-packages/dbt/task/init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "/home/renantorres/projetos/pipeline_sentinel/venv/lib/python3.13/site-packages/dbt/task/init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ~~~~~~~~~~~~^
+        text, default=default, hide_input=hide_input, type=type
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/renantorres/projetos/pipeline_sentinel/venv/lib/python3.13/site-packages/click/termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+  File "/home/renantorres/projetos/pipeline_sentinel/venv/lib/python3.13/site-packages/click/termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m01:15:04.783053 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 50.27229, "process_in_blocks": "77872", "process_kernel_time": 1.382359, "process_mem_max_rss": "105440", "process_out_blocks": "80", "process_user_time": 1.685342}
+[0m01:15:04.783875 [debug] [MainThread]: Command `dbt init` failed at 01:15:04.783640 after 50.27 seconds
+[0m01:15:04.784590 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1d3d9229e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1d3d8fbe30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1d3d8ba9c0>]}
+[0m01:15:04.785228 [debug] [MainThread]: Flushing usage events
+[0m01:15:05.542163 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:15:08.598194 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7cdec8f8c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7ce06507d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7cde41bc50>]}
+
+
+============================== 01:15:08.605400 | 4c206b32-1385-4c8f-81be-bab03cc44c70 ==============================
+[0m01:15:08.605400 [info ] [MainThread]: Running with dbt=1.11.7
+[0m01:15:08.605883 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt init dbt_project', 'printer_width': '80', 'indirect_selection': 'eager', 'no_print': 'None', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'partial_parse': 'True', 'log_cache_events': 'False', 'introspect': 'True', 'quiet': 'False', 'static_parser': 'True', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'log_format': 'default', 'use_colors': 'True', 'version_check': 'True', 'log_path': 'logs', 'profiles_dir': '/home/renantorres/.dbt', 'empty': 'None', 'write_json': 'True', 'warn_error': 'None'}
+[0m01:15:08.626459 [info ] [MainThread]: A project called dbt_project already exists here.
+[0m01:15:08.627543 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.08564375, "process_in_blocks": "51816", "process_kernel_time": 0.222832, "process_mem_max_rss": "100360", "process_out_blocks": "8", "process_user_time": 1.144549}
+[0m01:15:08.627905 [debug] [MainThread]: Command `dbt init` succeeded at 01:15:08.627825 after 0.09 seconds
+[0m01:15:08.628142 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7cddc86ea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7cddc05370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7cdddb3460>]}
+[0m01:15:08.628395 [debug] [MainThread]: Flushing usage events
+[0m01:15:09.318024 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:16:25.864836 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fee456cf8c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fee470b47d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fee44e5fc50>]}
+
+
+============================== 01:16:25.876774 | b71595f5-e772-42ba-9176-6191c61a03f2 ==============================
+[0m01:16:25.876774 [info ] [MainThread]: Running with dbt=1.11.7
+[0m01:16:25.877954 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'use_colors': 'True', 'static_parser': 'True', 'partial_parse': 'True', 'log_cache_events': 'False', 'version_check': 'True', 'debug': 'False', 'introspect': 'True', 'printer_width': '80', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/home/renantorres/.dbt', 'empty': 'None', 'warn_error': 'None', 'no_print': 'None', 'target_path': 'None', 'invocation_command': 'dbt init dbt_project', 'fail_fast': 'False', 'log_format': 'default', 'use_experimental_parser': 'False', 'log_path': 'logs', 'quiet': 'False', 'cache_selected_only': 'False'}
+[0m01:16:25.908982 [debug] [MainThread]: Starter project path: /home/renantorres/projetos/pipeline_sentinel/venv/lib/python3.13/site-packages/dbt/include/starter_project
+[0m01:16:25.933059 [info ] [MainThread]: 
+Your new dbt project "dbt_project" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m01:16:25.933804 [info ] [MainThread]: Setting up your profile.
+[0m01:17:21.599422 [info ] [MainThread]: Profile dbt_project written to /home/renantorres/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m01:17:21.603145 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 55.81012, "process_in_blocks": "88808", "process_kernel_time": 1.227997, "process_mem_max_rss": "105504", "process_out_blocks": "88", "process_user_time": 1.861803}
+[0m01:17:21.603809 [debug] [MainThread]: Command `dbt init` succeeded at 01:17:21.603689 after 55.81 seconds
+[0m01:17:21.604289 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fee44669f30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fee453eb1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fee4460e9c0>]}
+[0m01:17:21.604697 [debug] [MainThread]: Flushing usage events
+[0m01:17:22.370418 [debug] [MainThread]: An error was encountered while trying to flush usage events

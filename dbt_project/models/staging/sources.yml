@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: ibge_population_raw
+        description: 'Dados brutos de população do IBGE via API SIDRA'

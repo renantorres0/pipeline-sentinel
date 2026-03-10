@@ -1,0 +1,10 @@
+venv/
+.env
+__pycache__/
+*.pyc
+airflow/airflow.db*
+airflow/logs/
+airflow/simple_auth_manager_passwords.json.generated
+dbt_project/target/
+dbt_project/logs/
+.dbt/

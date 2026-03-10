@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_ibge_population
+    description: 'Dados do IBGE limpos e padronizados - múltiplas variáveis por município'
+    columns:
+      - name: municipio_codigo
+        tests:
+          - not_null
+      - name: valor
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - municipio_codigo
+              - variavel
